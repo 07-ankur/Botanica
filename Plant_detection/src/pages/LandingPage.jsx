@@ -8,7 +8,7 @@ const Landing_pg = () => {
     <>
       <Section1/>
       <Section2/>
-      <Section3/>
+      {/* <Section3/> */}
     </>
   )
 }

@@ -34,18 +34,18 @@ const Section1 = () => {
         display: "flex",
         flexDirection: "column",
         borderRadius: "15px",
-        mt: 4,
+        mt: 6,
         ml: 22,
         backgroundColor: "#ffffff",
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
-        width:'6%'}}>
+        width:'8%'}}>
         <img 
           style={{zIndex:100}}
           src={logo}
           alt="Logo"
         />
       </Box>
-      <Typography sx={{mt:6,mx:2}} variant="h2">Plant</Typography>
+      <Typography sx={{mt:8,mx:2}} variant="h1">ßOTANÌCA</Typography>
       </Box>
       <Box sx={{border:'2px solid #879452',bgcolor:'#879452', width:'400px',height:'400px',borderRadius:'50%',position:'absolute',top:300,right:20,zIndex:-10}}>
         <Box sx={{border:'2px solid #F5F6F8', width:'250px', height:'250px', borderRadius:'50%',ml:7,mt:7}}/>

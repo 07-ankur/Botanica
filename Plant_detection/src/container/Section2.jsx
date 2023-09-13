@@ -2,7 +2,7 @@
 import { Box } from "@mui/material";
 
 const Section2 = () => {
-  return <Box sx={{ height: "20vh", mt: 30 }}></Box>;
+  return <Box sx={{ height: "60vh", mt: 20,}}></Box>;
 };
 
 export default Section2;

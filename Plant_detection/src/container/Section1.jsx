@@ -12,7 +12,6 @@ const Section1 = () => {
     "Medicinal Plants and Drugs Identification Platform"
   );
   const [text2, setText2] = useState(" ");
-  const [subtext2, setSubtext2] = useState(" ");
   const [textOpacity, setTextOpacity] = useState(1);
   const [scale, setScale] = useState(1);
   const [scale2, setScale2] = useState(1);
@@ -52,22 +51,10 @@ const Section1 = () => {
         setTextOpacity(newOpacity2);
       }
 
-      // if (scrollValue > 450) {
-      //   setSubtext2('Botanica is your gateway to exploring the diverse world of medicinal plants. Our website leverages the power of machine learning to help you effortlessly identify and learn about various medicinal plants and raw materials.');
-      //   setTextOpacity(newOpacity2);
-      // } else {
-      //   setSubtext2('');
-      //   setTextOpacity(newOpacity2);
-      // }
-
       setScale(newScale);
       setScale2(newScale2);
 
       const stickyStopThreshold = 1200;
-
-      // if(scrollValue > 1200) {
-      //   window.scrollBy(0,900)
-      // }
 
       setIsSticky(scrollValue <= stickyStopThreshold);
     };
