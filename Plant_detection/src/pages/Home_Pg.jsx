@@ -1,57 +1,55 @@
 import { Box } from "@mui/system";
 import { Typography } from "@mui/material";
 import React from "react";
-import MainBG from "../assets/images/Homebg.png";
-import logo from "../assets/images/logo.png";
+import MainBG from "../assets/images/Homebg2.png";
+// import logo from "../assets/images/logo.png";
+import Navbar from "../components/Navbar";
+import Auth_btn from "../components/Buttons/Auth_btn";
+import ImageSearchIcon from '@mui/icons-material/ImageSearch';
+import About_Pg from "./About_Pg";
 
 const Home_Pg = () => {
   return (
     <Box>
-      <Box sx={{ display: "flex", flexDirection: "row" }}>
-        <img
-          style={{ zIndex: 100, width: "10%", height: "10%" }}
-          src={logo}
-          alt="Logo"
-        />
-        <Typography sx={{ mt: 5 }} variant="h2">
-          ßOTANÌCA
-        </Typography>
-      </Box>
+      <Navbar/>
       <Box
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          height: "60vh",
+          height: "100vh",
           width: "160vh",
-          mt:"-5%",
           mx: "10%",
-          py: "5%",
+          py: "4%",
         }}
       >
         <Typography
-          sx={{ color: "white", textShadow: "1px 2px black", ml: 20 }}
+          sx={{ color: "#DDE8C1", ml: 10,mb:2 }}
           variant="h4"
         >
-          Connecting You to Herbal Wellness!!
+          Bringing Clarity to the World of Medicinal Plants...
         </Typography>
         <Typography
-          sx={{ color: "white", textShadow: "1px 2px green", ml: -5 }}
+          sx={{ color: "white", textShadow: "2px 3px green", ml: -15, mb:2 }}
           variant="h1"
         >
-          Connecting You to Herbal Wellness!!
+          Connecting You to Herbal Wellness !!
         </Typography>
         <Typography
-          sx={{ color: "white", textShadow: "1px 2px black", ml: -20 }}
+          sx={{ color: "#DDE8C1", ml: -50 }}
           variant="h4"
         >
-          Connecting You to Herbal Wellness!!
+          "Instant Plant Recognition at Your Fingertips"
         </Typography>
+        <Box sx={{mt:2, ml:-60}}>
+        <Auth_btn label={<span style={{ fontSize: "1.2em" }}>Let's Identify <ImageSearchIcon sx={{mt:0.5}}/></span>} />
+        </Box>
       </Box>
       <Box sx={{ position: "absolute", zIndex: -10, bottom: "0.1%" }}>
         <img src={MainBG} style={{ width: "100%", opacity: 1 }}></img>
       </Box>
+      <About_Pg/>
     </Box>
   );
 };

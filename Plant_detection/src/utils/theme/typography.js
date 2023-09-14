@@ -27,7 +27,7 @@ const themeTypography = {
       lineHeight: 1.2,
     },
     h4: {
-      fontSize: "1.75rem",
+      fontSize: "2rem",
       fontWeight: 500,
       lineHeight: 1.2,
     },
@@ -42,7 +42,7 @@ const themeTypography = {
       lineHeight: 1.2,
     },
     h1: {
-      fontSize: "4rem",
+      fontSize: "4.5rem",
       fontWeight: 700,
       lineHeight: 1.2,
     },

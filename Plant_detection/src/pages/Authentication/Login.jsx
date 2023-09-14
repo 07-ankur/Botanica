@@ -17,8 +17,11 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import styled from "styled-components";
 import Auth_btn from "../../components/Buttons/Auth_btn";
 import jumpingPlant from "../../assets/animations/Jumpingplant_anim.json"
+import Leafscan from "../../assets/animations/leafscan_anim.json"
 import Lottie from "lottie-react";
 import { useNavigate } from "react-router-dom";
+import Logo from "../../components/Logo";
+import logo from '../../assets/images/logo.png'
 
 const TextFieldstyled = styled(TextField)`
   & .MuiOutlinedInput-root {
@@ -46,11 +49,12 @@ const Login_pg = () => {
   return (
     <>
       <CssBaseline/>
-      <Box>
+      <Box sx={{bgcolor:'#DDE8C1', height:'100vh', p:4}}>
         <Container
           sx={{
-            height: "35rem",
-            width: "80rem",
+            mt:5,
+            height: "32rem",
+            width: "45rem",
             backgroundColor: "white",
             border: "6px solid #3ea886",
             mt: 5,
@@ -58,11 +62,12 @@ const Login_pg = () => {
           }}
         >
           <Box sx={{ display: "flex", flexDirection: "row" }}>
-            <Box sx={{ width: "75%" }}>
-              {/* <img src={Logo_drk} style={{ width: "20%" }}></img> */}
-              <Typography variant="h3">
-              ßOTANÌCA
-              </Typography>
+            <Box sx={{ width: "100%" }}>
+              
+            <Box sx={{display:'flex', alignItems:'row',mt:2}}>
+            <img src={logo} style={{width:'10%'}}/>
+            <Typography sx={{mx:1,mt:2.5,color:'black'}}>ßOTANÌCA</Typography>
+            </Box>
               <Typography
                 variant="h2"
                 sx={{ letterSpacing: "0.01em", mt: 1, color: "#3ea886" }}
@@ -73,7 +78,7 @@ const Login_pg = () => {
                 variant="h4"
                 sx={{ letterSpacing: "0.01em", mb: 3, color: "#4d5980" }}
               >
-                Level up your Learning with Learnify!!{" "}
+                Instant Plant Recognition at Your Fingertips!!{" "}
               </Typography>
               <Box>
                 <TextFieldstyled
@@ -131,7 +136,7 @@ const Login_pg = () => {
                 </Typography>
                 <Typography
                   variant="h5"
-                  onClick={() => navigate("/signup")}
+                  onClick={() => navigate("/auth/signup")}
                   sx={{
                     letterSpacing: "0.01em",
                     mb: 3,
@@ -145,21 +150,13 @@ const Login_pg = () => {
                   {" "}
                   Signup{" "}
                 </Typography>
-                {/* <Lottie
-                  style={{ width: "30%", marginTop: -100, marginLeft: 30 }}
-                  animationData={rocket}
+                <Lottie
+                  style={{ width: "25%", marginTop: -100, marginLeft: 30 }}
+                  animationData={Leafscan}
                   loop
                   autoplay
-                /> */}
+                />
               </Box>
-            </Box>
-            <Box sx={{ width: "50%" }}>
-              <Lottie
-                style={{ marginTop: 20 }}
-                animationData={jumpingPlant}
-                loop
-                autoplay
-              />
             </Box>
           </Box>
         </Container>
