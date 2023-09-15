@@ -16,10 +16,11 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import styled from "styled-components";
 import Auth_btn from "../../components/Buttons/Auth_btn";
 import jumpingPlant from "../../assets/animations/Jumpingplant_anim.json";
-import Leafscan from "../../assets/animations/leafscan_anim.json"
+import Leafscan from "../../assets/animations/leafscan_anim.json";
 import Lottie from "lottie-react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import logo from "../../assets/images/logo.png";
 
 const TextFieldstyled = styled(TextField)`
   & .MuiOutlinedInput-root {
@@ -38,7 +39,6 @@ const OutlinedInputstyled = styled(OutlinedInput)`
 `;
 
 const Signup_pg = () => {
-
   const location = useLocation();
   const { email } = location.state || {};
   const navigate = useNavigate();
@@ -49,11 +49,18 @@ const Signup_pg = () => {
 
   return (
     <>
-      <Box sx={{backgroundImage: 'linear-gradient(to right,#DDE8C1 , #3ea886, #DDE8C1)', height:'100vh', p:4}}>
+      <Box
+        sx={{
+          backgroundImage:
+            "linear-gradient(to right,#DDE8C1 , #3ea886, #DDE8C1)",
+          height: "100vh",
+          p: 4,
+        }}
+      >
         <Container
           sx={{
-            mt:5,
-            height: "32rem",
+            mt: 4,
+            height: "34rem",
             width: "45rem",
             backgroundColor: "white",
             border: "5px solid #3ea886",
@@ -62,10 +69,14 @@ const Signup_pg = () => {
         >
           <Box sx={{ display: "flex", flexDirection: "row" }}>
             <Box sx={{ width: "100%" }}>
-              {/* <img src={Logo_drk} style={{ width: "20%" }}></img> */}
-              <Typography variant="h3">
-              ßOTANÌCA
-              </Typography>
+              <Box sx={{ display: "flex", alignItems: "row", mt: 1 }}>
+                <img src={logo} style={{ width: "10%" }} />
+                <Typography
+                  sx={{ mx: 1, mt: 1.5, color: "black", fontSize: "1.8em" }}
+                >
+                  ßOTANÌCA
+                </Typography>
+              </Box>
               <Typography
                 variant="h2"
                 sx={{ letterSpacing: "0.01em", mt: 1, color: "#3ea886" }}

@@ -7,6 +7,7 @@ import Navbar from "../components/Navbar";
 import Auth_btn from "../components/Buttons/Auth_btn";
 import ImageSearchIcon from '@mui/icons-material/ImageSearch';
 import About_Pg from "./About_Pg";
+import Identification_pg from "./Identification_pg";
 
 const Home_Pg = () => {
   return (
@@ -50,6 +51,7 @@ const Home_Pg = () => {
         <img src={MainBG} style={{ width: "100%", opacity: 1 }}></img>
       </Box>
       <About_Pg/>
+      <Identification_pg/>
     </Box>
   );
 };

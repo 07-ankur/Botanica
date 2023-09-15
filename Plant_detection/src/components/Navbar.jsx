@@ -63,8 +63,8 @@ import { Box } from "@mui/system";
           >
             {/* Logo */}
             <Box sx={{display:'flex', alignItems:'row',mt:0.5}}>
-            <Logo width='3em' height='3em'/>
-            <Typography sx={{mx:1.5,color:'black',mt:1.5}} variant="h3">ßOTANÌCA</Typography>
+            <Logo width='2.8em' height='3em'/>
+            <Typography sx={{mx:1.5,color:'black',mt:1,fontSize:'1.8em'}}>ßOTANÌCA</Typography>
             </Box>
   
             {/* Links */}
@@ -78,7 +78,7 @@ import { Box } from "@mui/system";
                 flexWrap="wrap"
               >
                 <LinkButton
-                  hover="#ebf1da"
+                  // hover="#ebf1da"
                   aria-owns={open ? "Contents" : undefined}
                   aria-haspopup="true"
                   onMouseEnter={handlePopoverOpen}

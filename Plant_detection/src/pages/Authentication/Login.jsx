@@ -26,7 +26,7 @@ import logo from '../../assets/images/logo.png'
 const TextFieldstyled = styled(TextField)`
   & .MuiOutlinedInput-root {
     &.Mui-focused fieldset {
-      border: 3px solid #2f8af5;
+      border: 3px solid #325721;
     }
   }
 `;
@@ -49,7 +49,7 @@ const Login_pg = () => {
   return (
     <>
       <CssBaseline/>
-      <Box sx={{bgcolor:'#DDE8C1', height:'100vh', p:4}}>
+      <Box sx={{backgroundImage: 'linear-gradient(to right,#DDE8C1 , #3ea886, #DDE8C1)', height:'100vh', p:4}}>
         <Container
           sx={{
             mt:5,
@@ -66,7 +66,7 @@ const Login_pg = () => {
               
             <Box sx={{display:'flex', alignItems:'row',mt:2}}>
             <img src={logo} style={{width:'10%'}}/>
-            <Typography sx={{mx:1,mt:2.5,color:'black'}}>ßOTANÌCA</Typography>
+            <Typography sx={{mx:1,mt:1.5,color:'black',fontSize:'1.8em'}}>ßOTANÌCA</Typography>
             </Box>
               <Typography
                 variant="h2"
