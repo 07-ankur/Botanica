@@ -38,13 +38,13 @@ const About_card1 = (props) => {
         <Box/>
         </Box>
         <Box sx={{display:'flex', flexDirection:'row'}}>
-        <Box sx={{width:'7em',height:'4em', bgcolor:`#84914B`, borderRadius:'10%',mx:2,my:1,p:1, textAlign:'center', boxShadow: "0 0 20px olive"}}>
+        <Box sx={{width:'7em',height:'3.5em', bgcolor:`#84914B`, borderRadius:'5%',mx:2,my:1,p:1, textAlign:'center', boxShadow: "0 0 20px olive"}}>
           <UploadIcon sx={{color:'white', fontSize:'1.3em'}}/>
-          <Typography sx={{color:'white'}} variant='body1'>Upload Image</Typography>
+          <Typography sx={{color:'white'}} variant='h6'>Upload Image</Typography>
         </Box>
-        <Box sx={{width:'6.5em',height:'4em', bgcolor:`#84914B`, boxShadow: "0 0 20px olive", borderRadius:'10%',mx:2,my:1,p:1.2,textAlign:'center'}}>
+        <Box sx={{width:'6.5em',height:'3.5em', bgcolor:`#84914B`, boxShadow: "0 0 20px olive", borderRadius:'5%',mx:2,my:1,p:1,textAlign:'center'}}>
           <CameraAltIcon sx={{color:'white', fontSize:'1.3em'}}/>
-          <Typography sx={{color:'white'}} variant='body1'>Take Picture</Typography>
+          <Typography sx={{color:'white'}} variant='h6'>Take Picture</Typography>
         </Box>
         </Box>
         <Box/>

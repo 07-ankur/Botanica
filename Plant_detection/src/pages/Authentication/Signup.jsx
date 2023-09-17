@@ -1,4 +1,7 @@
-import React from "react";
+import React   from "react";
+import axios from "axios";
+import { useCallback, useState } from "react";
+import { toast } from "react-hot-toast";
 import {
   Box,
   Container,
@@ -19,7 +22,6 @@ import jumpingPlant from "../../assets/animations/Jumpingplant_anim.json";
 import Leafscan from "../../assets/animations/leafscan_anim.json";
 import Lottie from "lottie-react";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 
 const TextFieldstyled = styled(TextField)`
@@ -39,13 +41,47 @@ const OutlinedInputstyled = styled(OutlinedInput)`
 `;
 
 const Signup_pg = () => {
-  const location = useLocation();
-  const { email } = location.state || {};
   const navigate = useNavigate();
 
-  const [showPassword, setShowPassword] = React.useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const submitHandler = useCallback(async () => {
+    try {
+      console.log({
+        email,
+        password,
+        name
+      });
+
+      const res = await axios.post(" ", {
+        email,
+        password,
+        name
+      });
+
+      console.log(res.data);
+
+      if (res.status=== 200) {
+  
+        toast.success("Account created successfully!");
+
+      } else {
+        toast.error("Error occured");
+      }
+
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong!");
+    } finally {
+      setIsLoading(false);
+    }
+    console.log(email);
+  }, [ email, password, name]);
 
   return (
     <>
@@ -91,16 +127,14 @@ const Signup_pg = () => {
               </Typography>
               <Box>
                 <TextFieldstyled
-                  sx={{ m: 1 }}
+                  sx={{ m: 1, width:'30ch' }}
                   id="outlined-basic"
-                  label="First Name"
+                  label="Name"
                   variant="outlined"
-                />
-                <TextFieldstyled
-                  sx={{ m: 1 }}
-                  id="outlined-basic"
-                  label="Last Name"
-                  variant="outlined"
+                  value={name}
+                  onChange={(e)=>{
+                    setName(e.target.value)
+                  }}
                 />
               </Box>
               <Box>
@@ -108,8 +142,10 @@ const Signup_pg = () => {
                   sx={{ m: 1, width: "30ch" }}
                   id="outlined-basic"
                   label="Email Address"
-                  value={email}
                   variant="outlined"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                 />
               </Box>
               <Box>
@@ -118,6 +154,9 @@ const Signup_pg = () => {
                     Password
                   </InputLabel>
                   <OutlinedInputstyled
+                    value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value)}}
                     id="outlined-adornment-password"
                     type={showPassword ? "text" : "password"}
                     endAdornment={
@@ -142,7 +181,7 @@ const Signup_pg = () => {
                   alignItems: "center",
                 }}
               >
-                <Auth_btn label={"Sign Up"} />
+                <Auth_btn label={"Sign Up"} functionHandler={submitHandler}/>
                 <Typography
                   variant="h6"
                   sx={{

@@ -44,7 +44,7 @@ import { Box } from "@mui/system";
         sx={{
           py: 1,
           height: 82,
-          bgcolor: scrollPosition > sp ? "rgba(255,255,255,.7)" : "transparent",
+          bgcolor: scrollPosition > sp ? "rgba(221,232,193,.7)" : "transparent",
           backdropFilter: scrollPosition > 10 && "blur(60px)",
         }}
       >

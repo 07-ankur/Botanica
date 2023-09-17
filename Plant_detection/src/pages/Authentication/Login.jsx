@@ -1,4 +1,6 @@
-import React from "react";
+import React, {useState, useCallback} from "react";
+import axios from "axios";
+import toast from "react-hot-toast";
 import {
   Box,
   Container,
@@ -20,7 +22,6 @@ import jumpingPlant from "../../assets/animations/Jumpingplant_anim.json"
 import Leafscan from "../../assets/animations/leafscan_anim.json"
 import Lottie from "lottie-react";
 import { useNavigate } from "react-router-dom";
-import Logo from "../../components/Logo";
 import logo from '../../assets/images/logo.png'
 
 const TextFieldstyled = styled(TextField)`
@@ -42,9 +43,40 @@ const OutlinedInputstyled = styled(OutlinedInput)`
 const Login_pg = () => {
   const navigate = useNavigate();
 
-  const [showPassword, setShowPassword] = React.useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+  const submitHandler = useCallback(async()=>{
+    try{
+      console.log({
+        email,
+        password,
+      });
+
+      const res = await axios.post(" ", {
+        email,
+        password,
+      });
+
+      console.log(res.data);
+
+      if (res.status === 200) {
+        localStorage.setItem('loginData',JSON.stringify(res.data))
+
+        toast.success("Login successful!");
+        navigate("/home");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong!");
+    } finally {
+      setIsLoading(false);
+    }
+  }, [email, password]);
 
   return (
     <>
@@ -57,7 +89,6 @@ const Login_pg = () => {
             width: "45rem",
             backgroundColor: "white",
             border: "6px solid #3ea886",
-            mt: 5,
             borderRadius: "20px",
           }}
         >
@@ -84,6 +115,8 @@ const Login_pg = () => {
                 <TextFieldstyled
                   sx={{ m: 1, mt: 3, width: "30ch" }}
                   id="outlined-basic"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   label="Email Address"
                   variant="outlined"
                 />
@@ -91,12 +124,14 @@ const Login_pg = () => {
               <Box>
                 <FormControl
                   sx={{ m: 1, width: "25ch", mb: 2.5 }}
-                  variant="outlined"
+                  variant="outlined" 
                 >
                   <InputLabel htmlFor="outlined-adornment-password">
                     Password
                   </InputLabel>
                   <OutlinedInputstyled
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     id="outlined-adornment-password"
                     type={showPassword ? "text" : "password"}
                     endAdornment={
@@ -121,7 +156,7 @@ const Login_pg = () => {
                   alignItems: "center",
                 }}
               >
-                <Auth_btn label={"Login"} />
+                <Auth_btn label={"Login"} functionHandler={submitHandler}/>
                 <Typography
                   variant="h6"
                   sx={{
