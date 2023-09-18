@@ -57,7 +57,7 @@ const Login_pg = () => {
         password,
       });
 
-      const res = await axios.post(" ", {
+      const res = await axios.post("https://httpbin.org/get/anything", {
         email,
         password,
       });
@@ -73,8 +73,6 @@ const Login_pg = () => {
     } catch (error) {
       console.log(error);
       toast.error("Something went wrong!");
-    } finally {
-      setIsLoading(false);
     }
   }, [email, password]);
 
