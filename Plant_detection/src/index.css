@@ -13,3 +13,19 @@
 ::-webkit-scrollbar-thumb {
     background: whitesmoke;
   }
+
+  progress {
+    width: 20em;
+    height : 20px;
+    padding: 0.1em;
+    border: 2px solid black;
+    border-radius: 2em;
+    background-color: #84914B;
+ }
+ progress::-webkit-progress-bar {
+    background-color: lightgrey;
+ }
+
+ progress::-webkit-progress-value {
+  background-color:  #84914B;
+}

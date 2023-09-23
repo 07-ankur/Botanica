@@ -1,8 +1,9 @@
 import React from 'react'
+import FileUpload_Pg from './FileUpload_Pg';
 
 const Identification_pg = () => {
   return (
-    <div>Identification_pg</div>
+    <FileUpload_Pg/>
   )
 }
 

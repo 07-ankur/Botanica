@@ -19,6 +19,7 @@ const About_Pg = () => {
     const colour2 = 'green'
 
   return (
+    <section id='about'>
     <Box sx={{height:'100vh'}}>
       <Box sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
         <Box sx={{mr:-10, zIndex:10}}>
@@ -30,6 +31,7 @@ const About_Pg = () => {
         </Box>
       </Box>
     </Box>
+    </section>
   )
 }
 
